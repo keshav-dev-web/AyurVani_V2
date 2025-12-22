@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=eczar:wght@400;700&family=Eczar:wght@400..800&family=Hind:wght@300;400;500;600;700&family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Khula:wght@300;400;600;700;800&family=Yantramanav:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>AyurVani Capsules</title>
+    <style>
+        /* AyurVani Brand Color Theme - Product Image Authentic */
+        :root,
+        [data-theme="ayurvani"] {
+            /* Primary Forest Green - Direct from product label */
+            --brand-primary: #1B4332;
+            --brand-secondary: #2D5F3F;
+
+            /* Bright Golden Yellow - From product "AyurVani" text */
+            --brand-gold: #FFD700;
+            --brand-gold-light: #FFF8DC;
+            --brand-gold-dark: #DAA520;
+
+            /* Supporting Greens from product design */
+            --brand-light: #E8F5E8;
+            --brand-muted: #C5D9C5;
+            --brand-accent: #0F2A1A;
+
+            /* Background gradients - Natural herb inspired */
+            --support-bg: #F8FDF8;
+            --support-bg-dark: #EDF7ED;
+
+            /* Text colors matching product aesthetic */
+            --text-dark: #0F2A1A;
+            --text-light: #4A7C59;
+            --text-gold: #B8860B;
+
+            /* Status colors - Natural medicine theme */
+            --success-color: #52B788;
+            --warning-color: #F77F00;
+            --danger-color: #D62828;
+
+            /* Product-specific healing colors */
+            --herbal-green: #40916C;
+            --natural-sage: #74A57F;
+            --ayurvedic-gold: #FFBF69;
+
+            /* Interactive states */
+            --accent: var(--brand-primary);
+            --muted: var(--brand-muted);
+        }
+
+        /* Brand Color Utility Classes */
+        .bg-brand-primary {
+            background-color: var(--brand-primary);
+        }
+
+        .bg-brand-secondary {
+            background-color: var(--brand-secondary);
+        }
+
+        .bg-brand-light {
+            background-color: var(--brand-light);
+        }
+
+        .bg-brand-gold {
+            background-color: var(--brand-gold);
+        }
+
+        .bg-brand-gold-light {
+            background-color: var(--brand-gold-light);
+        }
+
+        /* Text Colors */
+        .text-brand-primary {
+            color: var(--brand-primary);
+        }
+
+        .text-brand-secondary {
+            color: var(--brand-secondary);
+        }
+
+        .text-brand-light {
+            color: var(--brand-light);
+        }
+
+        .text-brand-accent {
+            color: var(--brand-accent);
+        }
+
+        .text-brand-gold {
+            color: var(--brand-gold);
+        }
+
+        .text-brand-gold-dark {
+            color: var(--brand-gold-dark);
+        }
+
+        .text-brand-gold-light {
+            color: var(--brand-gold-light);
+        }
+
+        /* Border Colors */
+        .border-brand-primary {
+            border-color: var(--brand-primary);
+        }
+
+        .border-brand-gold {
+            border-color: var(--brand-gold);
+        }
+
+        .border-brand-light {
+            border-color: var(--brand-light);
+        }
+
+        .border-success-color {
+            border-color: var(--success-color);
+        }
+
+        /* Success Color Utility Classes */
+        .text-success-color {
+            color: var(--success-color);
+        }
+
+        .bg-success-color {
+            background-color: var(--success-color);
+        }
+
+        /* Gradient Backgrounds - Product Inspired */
+        .bg-gradient-ayurvani {
+            background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 50%, var(--brand-gold) 100%);
+        }
+
+        .bg-gradient-natural {
+            background: linear-gradient(135deg, var(--support-bg) 0%, var(--brand-light) 50%, var(--brand-muted) 100%);
+        }
+
+        .bg-gradient-gold {
+            background: linear-gradient(135deg, var(--brand-gold-light) 0%, var(--brand-gold) 100%);
+        }
+
+        .bg-gradient-herbal {
+            background: linear-gradient(45deg, var(--herbal-green) 0%, var(--brand-gold) 100%);
+        }
+
+        /* Product-authentic Shadows */
+        .shadow-ayurvani {
+            box-shadow: 0 8px 25px rgba(27, 67, 50, 0.15);
+        }
+
+        .shadow-gold {
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .shadow-herbal {
+            box-shadow: 0 6px 20px rgba(64, 145, 108, 0.2);
+        }
+
+        /* Product-themed Hover Effects */
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(27, 67, 50, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .hover-gold:hover {
+            background-color: var(--brand-gold-dark);
+            transform: scale(1.02);
+            transition: all 0.3s ease;
+        }
+
+        .hover-herbal:hover {
+            background: linear-gradient(45deg, var(--brand-secondary) 0%, var(--brand-gold-dark) 100%);
+            transform: translateY(-1px);
+            transition: all 0.3s ease;
+        }
+
+        .font-eczar {
+            font-family: 'Eczar', serif;
+        }
+
+        .font-eczar {
+            font-family: 'eczar', sans-serif;
+        }
+
+        .font-yantra {
+            font-family: 'Yantramanav', sans-serif;
+        }
+
+        /* Container width control */
+        .main-container {
+            max-width: 450px;
+            margin: 0 auto;
+            margin-bottom: 60px;
+            width: 100%;
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .main-container {
+                max-width: 450px;
+            }
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 450px) {
+            .main-container {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Essential FAQ functionality */
+        .faq-answer {
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px !important;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-answer-content {
+            transform: translateY(0) !important;
+            opacity: 1 !important;
+        }
+    </style>
+</head>
+
+<body data-theme="ayurvani"
+    class="font-eczar leading-relaxed text-brand-accent transition-all duration-500 bg-gradient-natural"
+    style="min-height: 100vh; background-attachment: fixed;">
+
+    <div class="w-full main-container">
+        <!-- Header -->
+        <!-- Simplified Header -->
+        <header
+            class="text-white w-full max-w-[450px] md:max-w-[450px] overflow-hidden relative bg-gradient-ayurvani shadow-herbal"
+            style="border-bottom: 3px solid var(--brand-gold); position: relative;">
+
+            <!-- Golden accent overlay matching product name -->
+            <div class="absolute top-0 left-0 right-0 h-1 bg-brand-gold opacity-95"></div>
+
+            <!-- Main Header Content -->
+            <div class="flex items-center justify-between gap-4 p-4">
+                <!-- Brand Section -->
+                <div class="flex items-center gap-3 flex-1">
+                    <!-- Brand Name -->
+                    <div class="font-eczar font-bold text-white drop-shadow-lg">
+                        <div class="text-2xl leading-tight">
+                            <span class="whitespace-nowrap">AyurVani</span>
+                            <span class="whitespace-nowrap ml-2">Capsule</span>
+                        </div>
+                        <div class="text-sm font-medium opacity-90 -mt-1">
+                            प्राकृतिक गूंगापन का समाधान
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Now Button -->
+                <div class="flex-shrink-0">
+                    <button
+                        class="bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-800 font-black px-6 py-3 rounded-xl text-base shadow-lg transform hover:scale-105 transition-all duration-300 border-2 border-white/30"
+                        onclick="scrollToContact()">
+                        <div class="flex items-center gap-2">
+                            <span class="animate-bounce">🛒</span>
+                            <span>Order Now</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main style="background: transparent;">
+
+            <!-- The Real Pain Section -->
+            <section class=" p-4 bg-gradient-natural shadow-herbal relative overflow-hidden main-container" style="border-top: 3px solid var(--brand-gold);">
+                
+                <!-- Section Header -->
+                <div class="text-center mb-6 relative z-10">
+                    <div class="inline-flex items-center bg-red-600 px-4 py-3 rounded-full mb-4 shadow-herbal">
+                        <div class="text-3xl mr-3 animate-pulse">😔</div>
+                        <h2 class="text-2xl max-[450px]:text-xl font-bold font-eczar text-white">
+                            The Real Pain – गूंगेपन का असली संघर्ष
+                        </h2>
+                    </div>
+                    <p class="text-base max-[450px]:text-xl font-eczar text-brand-accent">
+                        गूंगेपन की वजह से बच्चा सब समझता है… पर बोल नहीं पाता।
+                    </p>
+                </div>
+
+                <!-- Pain Points - Image-First Design -->
+                <div class="space-y-4 relative z-10">
+                    
+                    <!-- Pain 1: Words stuck in throat -->
+                    <div class="bg-white rounded-xl shadow-herbal overflow-hidden border-3 border-red-300">
+                        <div class="bg-red-100 p-3">
+                            <div class="relative">
+                                <div class="w-full h-auto bg-red-600 rounded-lg flex items-center justify-center overflow-hidden shadow-ayurvani">
+                                    <img src="./Image/Pain2.png" alt="Words stuck in throat" class="w-full h-auto object-cover">
+                                </div>
+                                <div class="absolute -top-1 -right-1">
+                                    <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center shadow-gold">
+                                        <span class="text-white font-bold">1</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-4">
+                            <p class="text-sm max-[450px]:text-lg font-eczar text-red-700 text-center font-bold">
+                                शब्द गले में अटक जाते हैं—ये गूंगॅपन का सबसे बड़ा घाव है।
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Pain 2: Left behind in school -->
+                    <div class="bg-white rounded-xl shadow-herbal overflow-hidden border-3 border-red-300">
+                        <div class="bg-red-100 p-3">
+                            <div class="relative">
+                                <div class="w-full h-auto bg-red-600 rounded-lg flex items-center justify-center overflow-hidden shadow-ayurvani">
+                                    <img src="./Image/Pain3.png" alt="Left behind in school" class="w-full h-auto object-cover">
+                                </div>
+                                <div class="absolute -top-1 -right-1">
+                                    <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center shadow-gold">
+                                        <span class="text-white font-bold">2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-4">
+                            <p class="text-sm max-[450px]:text-lg font-eczar text-red-700 text-center font-bold">
+                                स्कूल में गूंगेपन की वजह से बच्चा पीछे रह जाता है।
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Pain 3: Failed treatments -->
+                    <div class="bg-white rounded-xl shadow-herbal overflow-hidden border-3 border-red-300">
+                        <div class="bg-red-100 p-3">
+                            <div class="relative">
+                                <div class="w-full h-auto bg-red-600 rounded-lg flex items-center justify-center overflow-hidden shadow-ayurvani">
+                                    <img src="./Image/Pain4.png" alt="Failed treatments" class="w-full h-auto object-cover">
+                                </div>
+                                <div class="absolute -top-1 -right-1">
+                                    <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center shadow-gold">
+                                        <span class="text-white font-bold">3</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-4">
+                            <p class="text-sm max-[450px]:text-lg font-eczar text-red-700 text-center font-bold">
+                                Doctors और treatment के बाद भी गूंगापन बना रहता है।
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Pain 4: Parents worry -->
+                    <div class="bg-white rounded-xl shadow-herbal overflow-hidden border-3 border-red-300">
+                        <div class="bg-red-100 p-3">
+                            <div class="relative">
+                                <div class="w-full h-auto bg-red-600 rounded-lg flex items-center justify-center overflow-hidden shadow-ayurvani">
+                                    <img src="./Image/Pain5.png" alt="Parents worry" class="w-full h-auto object-cover">
+                                </div>
+                                <div class="absolute -top-1 -right-1">
+                                    <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center shadow-gold">
+                                        <span class="text-white font-bold">4</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-4">
+                            <p class="text-sm max-[450px]:text-lg font-eczar text-red-700 text-center font-bold">
+                                माँ-बाप रोज़ सोचते हैं—"कब हमारा बच्चा इस गूंगेपन से बाहर आएगा…"
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Pain 5: Society ignores -->
+                    <div class="bg-white rounded-xl shadow-herbal overflow-hidden border-3 border-red-300">
+                        <div class="bg-red-100 p-3">
+                            <div class="relative">
+                                <div class="w-full h-auto bg-red-600 rounded-lg flex items-center justify-center overflow-hidden shadow-ayurvani">
+                                    <img src="./Image/Pain7.png" alt="Society ignores" class="w-full h-auto object-cover">
+                                </div>
+                                <div class="absolute -top-1 -right-1">
+                                    <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center shadow-gold">
+                                        <span class="text-white font-bold">5</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-4">
+                            <p class="text-sm max-[450px]:text-lg font-eczar text-red-700 text-center font-bold">
+                                समाज गूंगेपन को कमज़ोरी समझकर बच्चे को नज़रअंदाज़ कर देता है।
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Pain 6: Loneliness, shame and fear -->
+                    <div class="bg-white rounded-xl shadow-herbal overflow-hidden border-3 border-red-300">
+                        <div class="bg-red-100 p-3">
+                            <div class="relative">
+                                <div class="w-full h-auto bg-red-600 rounded-lg flex items-center justify-center overflow-hidden shadow-ayurvani">
+                                    <img src="./Image/Pain6.png" alt="Loneliness shame fear" class="w-full h-auto object-cover">
+                                </div>
+                                <div class="absolute -top-1 -right-1">
+                                    <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center shadow-gold">
+                                        <span class="text-white font-bold">6</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-4">
+                            <p class="text-sm max-[450px]:text-lg font-eczar text-red-700 text-center font-bold">
+                                अकेलापन, शर्म और डर… ये सब गूंगेपन के साथ बढ़ता है।
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Pain 7: Life stops -->
+                    <div class="bg-white rounded-xl shadow-herbal overflow-hidden border-3 border-red-300">
+                        <div class="bg-red-100 p-3">
+                            <div class="relative">
+                                <div class="w-full h-auto bg-red-600 rounded-lg flex items-center justify-center overflow-hidden shadow-ayurvani">
+                                    <img src="./Image/Pain8.png" alt="Life stops" class="w-full h-auto object-cover">
+                                </div>
+                                <div class="absolute -top-1 -right-1">
+                                    <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center shadow-gold">
+                                        <span class="text-white font-bold">7</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-4">
+                            <p class="text-sm max-[450px]:text-lg font-eczar text-red-700 text-center font-bold">
+                                सब ठीक है, पर गूंगापन इंसान की पूरी ज़िंदगी रोक देता है।
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Pain 8: Only sufferers understand -->
+                    <div class="bg-white rounded-xl shadow-herbal overflow-hidden border-3 border-red-300">                        
+                        <div class="p-4">
+                            <p class="text-sm max-[450px]:text-lg font-eczar text-red-700 text-center font-bold">
+                                👉 ये वो दर्द है जिसे सिर्फ वही समझ सकता है जो "गूंगेपन" से रोज़ लड़ रहा है।
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+        <footer
+            class="bg-gradient-ayurvani text-white py-4 px-4 text-center max-[450px]:py-4 max-[450px]:px-3 pb-20 max-[450px]:pb-20 shadow-herbal"
+            style="border-top: 3px solid var(--brand-gold); position: relative;">
+
+            <!-- Golden accent line matching product -->
+            <div class="absolute top-0 left-0 right-0 h-1 bg-brand-gold opacity-90"></div>
+
+            <div class="text-sm mt-4 font-eczar max-[450px]:text-xs max-[450px]:mt-2 text-brand-gold-light"
+                style="text-shadow: 1px 1px 2px rgba(27, 67, 50, 0.5);">
+                <p><strong class="font-eczar text-brand-gold">⚠️ Disclaimer :-</strong>This product is not intended to
+                    diagnose, treat, cure, or prevent any disease. Results may vary from person to person. Always
+                    consult with a qualified healthcare professional before starting any new supplement.</p>
+            </div>
+        </footer>
+        <!-- Fixed CTA Form at Bottom -->
+        <div id="fixedCTA"
+            class="fixed bottom-0 left-1/2 transform -translate-x-1/2 z-50 bg-brand-primary shadow-2xl w-full max-w-[450px] md:max-w-[450px] border-t-4 border-brand-secondary">
+            <div class="px-2 py-3 w-full max-[450px]:px-2 max-w-screen-xl mx-auto">
+                <!-- Main Content: Centered Layout -->
+                <div class="flex flex-col items-center justify-between gap-3 max-[450px]:gap-4">
+                    <!-- Promotional Points -->
+                    <div
+                        class="flex justify-around items-center gap-10 text-white text-sm font-eczar font-bold max-[450px]:text-xs max-[450px]:gap-12">
+                        <span class="truncate">🔥 Today Offer <span class="text-xl text-yellow-200">-> 10% OFF
+                            </span></span>
+                        <span class="truncate">📊 Free Diet Chart</span>
+                        <!-- <span class="truncate">💰 Free Cod Available</span> -->
+                    </div>
+
+                    <!-- Timer & Button Section -->
+                    <div class="flex items-center justify-between gap-15 max-[450px]:gap-18">
+                        <!-- Countdown Timer -->
+                        <div class="text-center">
+                            <div id="countdown"
+                                class="text-white text-lg max-[450px]:text-base font-extrabold font-eczar whitespace-nowrap flex items-center gap-1">
+                                <span class="animate-pulse">⏰</span>
+                                <span>00:00:00</span>
+                            </div>
+                            <p class="text-white text-xs max-[450px]:text-[10px]font-bold font-eczar"
+                                style="opacity: 0.9;">
+                                Today Offer समाप्त होने में
+                            </p>
+                        </div>
+
+                        <!-- Order Button -->
+                        <button id="ctaButton" onclick="scrollToContact()"
+                            class="bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-800 px-6 py-2.5 rounded-xl font-eczar font-bold text-base transition-all duration-300 shadow-lg hover:scale-105 hover:shadow-xl transform whitespace-nowrap max-[450px]:text-sm max-[450px]:px-4 max-[450px]:py-2">
+                            <span class="flex items-center gap-2">
+                                <span>🛒</span>
+                                <span>Order Now</span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function scrollToContact() {
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            }
+
+            // FAQ Toggle Function
+            function toggleFAQ(button) {
+                const faqItem = button.parentElement;
+                const answer = faqItem.querySelector('.faq-answer');
+                const icon = faqItem.querySelector('.faq-icon');
+                const content = faqItem.querySelector('.faq-answer-content');
+
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                        const otherAnswer = item.querySelector('.faq-answer');
+                        const otherIcon = item.querySelector('.faq-icon');
+                        const otherContent = item.querySelector('.faq-answer-content');
+
+                        otherAnswer.style.maxHeight = '0px';
+                        otherIcon.textContent = '+';
+                        otherIcon.style.transform = 'rotate(0deg)';
+                        otherContent.style.opacity = '0';
+                        otherContent.style.transform = 'translateY(8px)';
+                    }
+                });
+
+                // Toggle current FAQ item
+                if (faqItem.classList.contains('active')) {
+                    // Close
+                    faqItem.classList.remove('active');
+                    answer.style.maxHeight = '0px';
+                    icon.textContent = '+';
+                    icon.style.transform = 'rotate(0deg)';
+                    content.style.opacity = '0';
+                    content.style.transform = 'translateY(8px)';
+                } else {
+                    // Open
+                    faqItem.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    icon.textContent = '−';
+                    icon.style.transform = 'rotate(180deg)';
+
+                    // Delay content animation slightly
+                    setTimeout(() => {
+                        content.style.opacity = '1';
+                        content.style.transform = 'translateY(0)';
+                    }, 100);
+                }
+            }
+
+            // Countdown Timer Function
+            function updateCountdown() {
+                const now = new Date();
+                const tomorrow = new Date(now);
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                tomorrow.setHours(0, 0, 0, 0); // Set to midnight
+
+                const timeRemaining = tomorrow - now;
+
+                const hours = Math.floor(timeRemaining / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+                const formattedTime =
+                    String(hours).padStart(2, '0') + ':' +
+                    String(minutes).padStart(2, '0') + ':' +
+                    String(seconds).padStart(2, '0');
+
+                const countdownElement = document.getElementById('countdown');
+                if (countdownElement) {
+                    countdownElement.innerHTML = `<span class="animate-pulse">⏰</span> <span>${formattedTime}</span>`;
+                }
+                const offerCd = document.getElementById('offerCountdown');
+                if (offerCd) {
+                    const timeNode = offerCd.querySelector('.time-text');
+                    if (timeNode) timeNode.textContent = formattedTime;
+                }
+                const offerProgress = document.getElementById('offerProgress');
+                if (offerProgress) {
+                    const totalMs = 24 * 60 * 60 * 1000;
+                    const elapsed = totalMs - timeRemaining;
+                    const percent = Math.min(100, Math.max(0, (elapsed / totalMs) * 100));
+                    offerProgress.style.width = percent + '%';
+                }
+            }
+            // Start the countdown timer immediately and update every second
+            updateCountdown(); // Initial call
+            setInterval(updateCountdown, 1000); // Update every second
+        </script>
+</body>
+
+</html>
